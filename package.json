@@ -1,6 +1,6 @@
 {
   "name": "react-autosuggest-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Autosuggest Component for React",
   "main": "index.js",
   "scripts": {
