@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './autosuggest.scss'
 
 const SuggestionItem = ({
@@ -8,13 +8,14 @@ const SuggestionItem = ({
   inactiveItemBackground,
   onClick,
   query,
+  key,
 }) => {
   const getFormattedString = () => {
     const content = data.name
     const startIndex = content.toLowerCase().indexOf(query.toLowerCase())
     const endIndex = startIndex + query.length
     return (
-      <Fragment>
+      <div key={key}>
         {query && (
           <p
             className={activeItem && 'active-item'}
@@ -41,7 +42,7 @@ const SuggestionItem = ({
             {content}
           </p>
         )}
-      </Fragment>
+      </div>
     )
   }
 
@@ -169,6 +170,7 @@ const AutoSuggest = ({
         <div className="suggestions-container" ref={suggestionsRef}>
           {suggestions.map((sug, index) => (
             <SuggestionItem
+              key={`suggestion-${index}`}
               query={query}
               data={sug}
               activeItem={currentIndex === index}
