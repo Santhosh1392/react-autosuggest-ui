@@ -33,13 +33,14 @@ const SuggestionItem = ({
   inactiveItemBackground,
   onClick,
   query,
+  key,
 }) => {
   const getFormattedString = () => {
     const content = data.name;
     const startIndex = content.toLowerCase().indexOf(query.toLowerCase());
     const endIndex = startIndex + query.length;
     return (
-      React.Fragment(null, [
+      React__default['default'].createElement('div', {key: key}, [
         query && (
           React__default['default'].createElement('p', {
             className: activeItem && 'active-item',
@@ -194,6 +195,7 @@ const AutoSuggest = ({
         React__default['default'].createElement('div', {className: "suggestions-container", ref: suggestionsRef}, [
           suggestions.map((sug, index) => (
             SuggestionItem({
+              key: `suggestion-${index}`,
               query: query,
               data: sug,
               activeItem: currentIndex === index,
