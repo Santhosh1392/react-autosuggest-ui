@@ -1,0 +1,59 @@
+.autosuggest-container {
+  width: 100%;
+  max-width: 300px;
+  * {
+    box-sizing: border-box;
+  }
+  .autosuggest-input {
+    width: 100%;
+    height: 45px;
+    border: 1px solid #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+    font-size: 16px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .suggestions-container {
+    width: 100%;
+    border: 1px solid #f1f1f1;
+
+    .suggestion-item {
+      border-bottom: 1px solid #f1f1f1;
+      border-collapse: collapse;
+      p {
+        font-family: inherit;
+        margin: 0;
+        padding: 10px 15px;
+        font-size: 16px;
+        color: #717272;
+        letter-spacing: 0.3px;
+        span.bold {
+          font-weight: 800;
+          color: #000;
+        }
+      }
+
+      &:hover {
+        p {
+          background-color: #f1f1f1;
+          font-size: 17px;
+        }
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    .no-results-found {
+      padding: 15px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+}
